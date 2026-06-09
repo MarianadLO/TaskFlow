@@ -6,9 +6,99 @@
     <title>TaskFlow</title>
 </head>
 <body>
-    <header>
-        <h1></h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>TaskFlow</h1>
+            <p>gerenciando sua rotina</p>
+        </header>
+        <main>
+        <section class="estatistica">
+
+                <div class="stat-card">
+                    <span>0</span>
+                    <p>Total</p>
+                </div>
+
+            <div class="stat-card">
+                <span>0</span>
+                <p>Concluídas</p>
+            </div>
+
+            <div class="stat-card">
+                <span>0</span>
+                <p>Pendentes</p>
+            </div>
+        </section>
+        <section class="form">
+            <form>
+                <div class="form_tarefa">
+                    <label for="tarefa_titulo">Título da tarefa</label>
+                    <input type="text" id="tarefa_titulo" name="tarefa_titulo">
+                </div>
+                <div class="form_categoria">
+                    <label for="tarefa_categoria">Categoria</label>
+                    <select id="tarefa_categoria" name="tarefa_categoria">
+                        <option>Selecione uma opção</option>
+                        <option>Estudos</option>
+                        <option>Trabalho</option>
+                        <option>Pessoal</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div class="form_prioridade">
+                    <label for="tarefa_prioridade">Prioridade</label>
+                    <select id="tarefa_prioridade" name="tarefa_prioridade">
+                        <option>Selecione uma opção</option>
+                        <option>Alta</option>
+                        <option>Média</option>
+                        <option>Baixa</option>
+                    </select>
+                </div>
+                <div class="button_form">
+                    <button type="submit">Adicionar tarefa</button>
+                </div>
+            </form>
+        </section>
+        <section class="tabs">
+            <ul>
+                <li>
+                    <button class="tabs-options">Todas</button>
+                </li>
+                <li>
+                    <button class="tabs-options">Estudos</button>
+                </li>
+                <li>
+                    <button class="tabs-options">Trabalho</button>
+                </li>
+                <li>
+                    <button class="tabs-options">Pessoal</button>
+                </li>
+                <li>
+                    <button class="tabs-options">Outros</button>
+                </li>
+                <li>
+                    <button class="tabs-options">Concluídas</button>
+                </li>
+            </ul>
+        </section>
+        <section class="task">
+            <div class="task-list">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="finish-task">
+                        <h2>Estudar português</h2>
+                        <p>Alta</p>
+                        <p>Estudos</p>
+                    </li>   
+                </ul>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+                
+    </main>
+    </div>
     
 </body>
 </html>
