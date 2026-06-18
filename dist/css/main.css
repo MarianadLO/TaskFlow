@@ -101,3 +101,30 @@ select:focus {
 .button_form button:hover {
   opacity: 0.85;
 }
+.tabs {
+  margin-bottom: 2em;
+}
+.tabs ul {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.tabs-options {
+  font-size: 1.2em;
+  padding: 8px 16px;
+  background: transparent;
+  color: #666;
+  border: none;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tabs-options.active {
+  background: #6366F1;
+  color: white;
+}
+.tabs-options:hover {
+  background-color: #eaebec;
+}
