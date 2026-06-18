@@ -15,9 +15,13 @@
   "type": "commonjs",
   "main": "gruntfile.js",
   "scripts": {
+    "less": "lessc ./dev/less/main.less ./dist/css/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "grunt": "^1.6.2",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "less": "^4.6.4"
   }
 }
