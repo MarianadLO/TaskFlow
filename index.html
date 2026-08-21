@@ -34,7 +34,7 @@
                 </div>
             </section>
             <section class="form">
-                <form>
+                <form id="form-area">
                     <div class="form_tarefa">
                         <label for="tarefa_titulo"></label>
                         <input type="text" id="tarefa_titulo" name="tarefa_titulo" placeholder="Digite sua tarefa">
@@ -59,7 +59,7 @@
                         </select>
                     </div>
                     <div class="button_form">
-                        <button type="submit">Adicionar tarefa</button>
+                        <button id="button-add" type="submit">Adicionar tarefa</button>
                     </div>
                 </form>
             </section>
@@ -87,44 +87,13 @@
             </section>
             <section class="task">
                 <div class="task-list">
-                    <ul class="grid-container grid-container-fit">
-                        <li>
-                            <div class="main-task">
-                                <input type="checkbox" name="finish-task">
-                                <h2></h2>
-                            </div>
-                            <div class="info-task">
-                                <p>Alta</p>
-                                <p>Estudos</p> 
-                            </div>
-                        </li>   
-                        <li>
-                             <div class="main-task">
-                                <input type="checkbox" name="finish-task">
-                                <h2></h2>
-                            </div>
-                            <div class="info-task">
-                                <p>Alta</p>
-                                <p>Estudos</p> 
-                            </div>
-                        </li>   
-                        <li>
-                             <div class="main-task">
-                                <input type="checkbox" name="finish-task">
-                                <h2></h2>
-                            </div>
-                            <div class="info-task">
-                                <p>Alta</p>
-                                <p>Estudos</p> 
-                            </div>
-                        </li>   
+                    <ul class="grid-container grid-container-fit" id="task-list">                        
                     </ul>
-                    <div>
-                        <p></p>
-                    </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script src="./dist/js/main.js"></script>
 </body>
 </html>
