@@ -194,9 +194,26 @@ select {
 }
 
 .info-task span {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   padding: 4px 10px;
   border-radius: 12px;
   background-color: #eeeef0;
   color: #555;
+}
+
+.prioridade {
+    &.alta {
+        background-color: #FEE2E2;
+        color: #B91C1C;
+    }
+
+    &.media {
+        background-color: #FEF3C7;
+        color: #B45309;
+    }
+
+    &.baixa {
+        background-color: #DCFCE7;
+        color: #15803D;
+    }
 }
