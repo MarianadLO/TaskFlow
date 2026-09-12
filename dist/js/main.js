@@ -5,18 +5,30 @@ const tarefaInput = document.querySelector("#tarefa_titulo");
 const categoriaSelect = document.querySelector("#tarefa_categoria");
 const tarefaSelect = document.querySelector("#tarefa_prioridade");
 const totalTarefas =document.querySelector("#total-tarefas");
+const tarefasConcluidas = document.querySelector("#tarefas-concluidas");
+const tarefasPendentes = document.querySelector("#tarefas-pendentes");
 const tarefas = [];
 
+function atualizaEstatisticas () { 
+    const tarefaConcluida = tarefas.filter(function(tarefa){
+        return tarefa.concluida === true;
+    });
+    
+    tarefasConcluidas.textContent = tarefaConcluida.length;
+    
+    tarefasPendentes.textContent = tarefas.length - tarefaConcluida.length;
+    
+};
 
 form.addEventListener("submit", function(event){
 
     event.preventDefault();
 
-     // ===== VALORES PREENCHIDOS PELO USUÁRIO =====
+    // ===== VALORES PREENCHIDOS PELO USUÁRIO =====
     const titulo = tarefaInput.value;
     const categoria = categoriaSelect.value;
     const prioridade = tarefaSelect.value;
-
+    
     // ===== REPRESENTAÇÃO DE UMA TAREFA =====
     const novaTarefa = {
         titulo,
@@ -28,6 +40,7 @@ form.addEventListener("submit", function(event){
     // ======== ADIÇÃO DE NOVA TAREFA AO ARRAY E INSERÇÃO NO DISPLAY DE TAREFAS =========
 
     tarefas.push(novaTarefa);
+    atualizaEstatisticas();
     totalTarefas.textContent = tarefas.length;
 
     // ======== CRIAÇÃO DO CARD DE TAREFA ========
@@ -38,7 +51,7 @@ form.addEventListener("submit", function(event){
     const infoTask = document.createElement("div");
     const spanPrioridade = document.createElement("span");
     const spanCategoria = document.createElement("span");
-
+    
     if (novaTarefa.prioridade === "Alta") {
         spanPrioridade.classList.add("alta");
     } else if (novaTarefa.prioridade === "Média") {
@@ -46,11 +59,11 @@ form.addEventListener("submit", function(event){
     } else if (novaTarefa.prioridade === "Baixa") {
         spanPrioridade.classList.add("baixa");
     };
-
+    
     // ======== ADIÇÃO DAS CLASSES CSS AOS ELEMENTOS DO CARD ========
     mainTask.classList.add("main-task");    
     infoTask.classList.add("info-task");
-
+    
     
     input.type="checkbox";
     h2.textContent = novaTarefa.titulo;
@@ -58,6 +71,11 @@ form.addEventListener("submit", function(event){
     spanPrioridade.textContent = novaTarefa.prioridade;
     spanPrioridade.classList.add("prioridade");
 
+    input.addEventListener("change", function(){
+        novaTarefa.concluida = input.checked;
+        atualizaEstatisticas();
+    });
+    
     // =========== CONSTRUÇÃO DO CARD =========
     mainTask.appendChild(input);
     mainTask.appendChild(h2);
